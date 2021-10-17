@@ -1,0 +1,32 @@
+.slide-section {
+}
+.slide-list {
+  display: flex;
+  max-width: 700px;
+  margin: 0 auto;
+  .item {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .img-wrapper {
+    .img {
+    }
+  }
+  .desc {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+.slick-prev {
+  left: -60px;
+  width: 40px;
+  height: 40px;
+}
+.slick-next {
+  right: -60px;
+  height: 40px;
+  width: 40px;
+}
+.slick-arrow::before {
+  font-size: 40px;
+}

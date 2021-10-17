@@ -1,6 +1,13 @@
 // header-logo
 .header-logo {
   text-align: center;
+  padding: 20px 0 20px;
+  background-color: rgb(197, 89, 188);
+  .header-logo-link {
+    color: cl(black);
+
+    font-size: 4rem;
+  }
 }
 //nav_toggle
 .nav_toggle {
@@ -9,7 +16,7 @@
   height: 65px;
   top: 40px;
   right: 30px;
-  // display: none;
+  display: none;
   @include sp {
     display: block;
   }
@@ -38,9 +45,15 @@
 }
 // header-nav
 .header-nav {
+  background-color: white;
   .nav-list {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
     .item {
+      margin-right: 30px;
     }
   }
 }

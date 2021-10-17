@@ -1,0 +1,28 @@
+.my-section {
+}
+.inner {
+}
+.my-wrapper {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.my-img-wrapper {
+  width: 30%;
+  margin-right: 40px;
+  .my-img {
+    border-radius: 50%;
+  }
+}
+
+.my-text {
+  flex: 1;
+  .title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  .desc {
+    font-size: 2rem;
+  }
+}

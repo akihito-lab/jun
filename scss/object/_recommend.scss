@@ -1,0 +1,32 @@
+.recommend-blog-section {
+}
+.inner {
+}
+.recommend-title {
+  text-align: center;
+}
+.recommend-list {
+  display: flex;
+  justify-content: center;
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 30px auto 0;
+  a {
+    display: block;
+    width: 30%;
+    margin-right: 20px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  .item {
+  }
+  .img-wrapper {
+    .img {
+      width: 100%;
+    }
+  }
+  .desc {
+    padding: 20px 0;
+  }
+}

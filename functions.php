@@ -51,3 +51,4 @@ function add_css_js() {
 }
 //関数名add_scripts()を表側で呼び出す
 add_action('wp_enqueue_scripts', 'add_css_js');
+

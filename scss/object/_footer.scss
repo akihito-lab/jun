@@ -1,0 +1,22 @@
+.footer {
+  background-color: #c1c1c1;
+}
+.footer-wrapper {
+  max-width: 1100px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  .footer-link-wrapper {
+    margin-bottom: 30px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    .footer-link {
+    }
+  }
+}
+.copy-right {
+  padding: 30px 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
