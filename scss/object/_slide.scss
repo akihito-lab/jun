@@ -2,19 +2,33 @@
 }
 .slide-list {
   display: flex;
-  max-width: 700px;
+  max-width: 1100px;
+  padding: 0 20px;
   margin: 0 auto;
-  .item {
+  .link {
+    display: block;
     margin-right: 15px;
     margin-left: 15px;
   }
+  .item {
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+  }
   .img-wrapper {
+    max-width: 300px;
+    margin-right: 20px;
     .img {
     }
   }
-  .desc {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  .text {
+    .title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .desc {
+      flex: 1;
+    }
   }
 }
 .slick-prev {

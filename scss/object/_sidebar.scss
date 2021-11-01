@@ -1,0 +1,65 @@
+.sidebar {
+  flex: 1;
+  .category-search {
+    margin-bottom: 40px;
+    .title {
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+    }
+    .list {
+      .link {
+        display: inline-block;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .sidebar-business-list {
+    display: flex;
+    max-width: 260px;
+    margin: 0 auto 40px;
+    .link {
+      display: block;
+      .item {
+        .img-wrapper {
+        }
+        .img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .cmn-sidebar-title {
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px;
+    background-color: #3fe715;
+    margin-bottom: 15px;
+  }
+  .sidebar-title {
+  }
+  .sidebar-list {
+    margin-bottom: 40px;
+
+    .link {
+      display: block;
+      margin-bottom: 20px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      .item {
+        .img-wrapper {
+          margin-bottom: 10px;
+          .img {
+          }
+        }
+        .title {
+          font-size: 2rem;
+        }
+      }
+    }
+    .none-post {
+    }
+  }
+}

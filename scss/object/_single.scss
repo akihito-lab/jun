@@ -1,0 +1,40 @@
+.single-section {
+  .inner {
+  }
+  .single-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    .text-wrapper {
+      width: 70%;
+      margin-right: 100px;
+      .text {
+        img {
+          width: auto;
+        }
+        h1 {
+          font-size: 4rem;
+        }
+        h2 {
+          font-size: 2rem;
+        }
+        h3 {
+          font-size: 1.9rem;
+        }
+        h4 {
+          font-size: 1.6rem;
+        }
+        h5 {
+          font-size: 1.3em;
+        }
+        .date {
+        }
+        .title {
+        }
+        .desc {
+        }
+      }
+    }
+  }
+}

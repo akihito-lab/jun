@@ -1,50 +1,35 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="テキストテキストテキストテキストテキストテキスト" />
-  <!-- フォントファミリー -->
-  
-  <!-- フォントアイコン -->
-    <?php wp_head(); ?>
-</head>
-
-<body>
-    <header class="header">
-    <h1 class="header-logo"><a href="<?php echo esc_url( home_url('/') ); ?>" class="header-logo-link">占い小説家</a></h1>
-        <span class="nav_toggle">
-            <i></i>
-            <i></i>
-            <i></i>
-        </span>
-        <nav class="header-nav">
-            <ul class="nav-list">
-                <li class="item"><a href="#">出版本はこちら</a></li>
-                <li class="item"><a href="#">占いはこちら</a></li>
-                <li class="item"><a href="#">記事一覧</a></li>
-                <li class="item"><a href="#">お問い合わせ</a></li>
-            </ul>
-        </nav>
-
-    </header>
+<?php get_header(); ?>
     <main>
         <section class="slide-section cmn-section">
             <div class="inner">
                 <ul class="slide-list slick01">
-                    <li class="item">
-                        <div class="img-wrapper"><img src="<?php echo esc_url(get_theme_file_uri('/image/book.jpg')); ?>" alt="" class="img"></div>
-                        <p class="desc">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    </li>
-                    <li class="item">
-                        <div class="img-wrapper"><img src="https://placehold.jp/981x1378.png" alt="" class="img"></div>
-                        <p class="desc">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    </li>
-                    <li class="item">
-                        <div class="img-wrapper"><img src="https://placehold.jp/981x1378.png" alt="" class="img"></div>
-                        <p class="desc">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    </li>
+                    <a href="" class="link">
+                        <li class="item">
+                            <div class="img-wrapper"><img src="<?php echo esc_url(get_theme_file_uri('/image/book.jpg')); ?>" alt="" class="img"></div>
+                            <div class="text">
+                                <div class="title">テキストテキストテキストテキストテキスト</div>
+                                <p class="desc">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="" class="link">
+                        <li class="item">
+                            <div class="img-wrapper"><img src="https://placehold.jp/981x1378.png" alt="" class="img"></div>
+                            <div class="text">
+                                <div class="title">テキストテキストテキストテキストテキスト</div>
+                                <p class="desc">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="" class="link">
+                        <li class="item">
+                            <div class="img-wrapper"><img src="https://placehold.jp/981x1378.png" alt="" class="img"></div>
+                            <div class="text">
+                                <div class="title">テキストテキストテキストテキストテキスト</div>
+                                <p class="desc">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                            </div>
+                        </li>
+                    </a>
                 </ul>
             </div>
         </section>
@@ -73,7 +58,6 @@
                 ?>
                 <a href="<?php the_permalink(); ?>" class="link">
                 <li class="item">
-                <?php $thumbnail = (get_the_post_thumbnail_url($post ->ID,'full' )) ? get_the_post_thumbnail_url($post ->ID,'full') : get_template_directory_uri().$NO_IMAGE_URL;?>
                     <div class="img-wrapper"><img src="<?php echo $thumbnail ?>" alt="" class="img"></div>
                     <p class="desc"><?php the_title(); ?></p>
                 </li>
@@ -220,18 +204,4 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-wrapper">
-            <div class="footer-link-wrapper"><a href="" class="footer-link">トップページ</a></div>
-            <div class="footer-link-wrapper"><a href="" class="footer-link">-出版本</a></div>
-            <div class="footer-link-wrapper"><a href="" class="footer-link">-占い</a></div>
-            <div class="footer-link-wrapper"><a href="" class="footer-link">記事一覧</a></div>
-            <div class="footer-link-wrapper"><a href="" class="footer-link">お問い合わせ</a></div>
-        </div>
-        <p class="copy-right">Copyright (c) 2021 Jun Home Page All Rights Reserved.</p>
-    </footer>
-
-    
-    <?php wp_footer(); ?>
-</body>
-</html>
+    <?php get_footer(); ?>

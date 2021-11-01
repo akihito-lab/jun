@@ -23,10 +23,10 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Hiragino Mincho Pro", sans-serif;
+  font-family: "Noto Serif JP", "Zen Antique Soft", serif;
   font-size: 1.6rem;
   line-height: 1;
-  background-color: pink;
+  // background-color: pink;
 }
 a {
   text-decoration: none;
@@ -46,9 +46,11 @@ img {
 // @inlcude TimesNewRoman;
 //--------------------------------------------------
 
-@mixin TimesNewRoman {
-  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN",
-    "Yu Mincho", "MS PMincho", serif;
+@mixin NotoSerifJP {
+  font-family: "Noto Serif JP", "Zen Antique Soft", serif;
+}
+@mixin ZenAntiqueSoft {
+  font-family: "Zen Antique Soft", "Noto Serif JP", serif;
 }
 
 // RESPONSIVE
