@@ -1,4 +1,12 @@
 .my-section {
+  background-image: url(../image/pexels-felix-mittermeier-956999.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  .mask {
+    background: linear-gradient(to bottom, #040a0a, rgba(58, 76, 111, 0));
+    padding-bottom: 90px;
+  }
 }
 .inner {
 }
@@ -10,16 +18,16 @@
 }
 .my-img-wrapper {
   width: 30%;
-  margin-right: 40px;
   .my-img {
-    border-radius: 50%;
   }
 }
 
 .my-text {
   flex: 1;
+  padding: 20px;
+  color: white;
   .title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
   }
   .desc {

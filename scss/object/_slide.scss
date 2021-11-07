@@ -1,17 +1,35 @@
 .slide-section {
+  .inner {
+    position: relative;
+  }
 }
+// アニメーション
+#container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  canvas {
+    height: 100% !important;
+    width: 100% !important;
+  }
+}
+//
 .slide-list {
+  position: relative;
   display: flex;
   max-width: 1100px;
-  padding: 0 20px;
+  padding: 200px 20px 90px;
   margin: 0 auto;
   .link {
     display: block;
     margin-right: 15px;
     margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   .item {
-    background-color: #fff;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #8fe5ff;
     padding: 30px;
     display: flex;
   }
@@ -22,15 +40,33 @@
     }
   }
   .text {
+    flex: 1;
     .title {
       font-size: 3rem;
       margin-bottom: 20px;
     }
     .desc {
-      flex: 1;
     }
   }
 }
+
+// スライドアニメーション
+.slick-slide .item {
+  transform: scale(0.9);
+}
+
+.slick-active .item {
+  animation: ScaleAni 0.5s ease 0.5s 1 normal both;
+}
+@keyframes ScaleAni {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+//
 .slick-prev {
   left: -60px;
   width: 40px;
@@ -43,4 +79,10 @@
 }
 .slick-arrow::before {
   font-size: 40px;
+}
+.slick-dots {
+  bottom: 110px;
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 0px;
 }

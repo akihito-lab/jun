@@ -47,6 +47,10 @@ function add_css_js() {
 	wp_enqueue_script('slick.min', get_theme_file_uri('/slick/slick.min.js'), array(), '', true);
   // wowの読み込み
   wp_enqueue_script('wow', get_theme_file_uri('/js/wow.min.js'), array(), false, true);
+  //js/script.jsを読み込み
+	wp_enqueue_script('particles', get_theme_file_uri('/js/particles-divination.js'), array(), '', true);
+  //js/script.jsを読み込み
+	wp_enqueue_script('particles-homepage', get_theme_file_uri('/js/particles-homepage.js'), array(), '', true);
 	//js/script.jsを読み込み
 	wp_enqueue_script('js', get_theme_file_uri('/js/script.js'), array(), '', true);
 }

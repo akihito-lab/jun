@@ -1,6 +1,30 @@
 .cmn-section {
-  padding-top: 90px;
+  .mask {
+    padding-top: 90px;
+  }
 }
 .cmn-title {
   font-size: 4rem;
+  text-align: center;
+}
+.front-page-main {
+  position: relative;
+}
+
+.section-mask-wrapper {
+  background-image: url(../image/pexels-clement-percheron-5243591.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  .mask-wrapper {
+    background: linear-gradient(
+      to bottom,
+      rgb(1, 1, 1),
+      rgba(1, 1, 1, 0.8),
+      rgba(1, 1, 1, 0.6),
+      rgba(58, 76, 111, 0.6),
+      rgba(58, 76, 111, 0.4),
+      rgba(58, 76, 111, 0)
+    );
+  }
 }

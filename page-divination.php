@@ -16,10 +16,10 @@
         <header class="divination-header">
             <nav class="divination-header-nav">
                 <ul class="list">
-                    <h1 class="divination-header-logo"><span style="font-size: 2.7rem; color: rgb(163,225,280);">気軽にメール鑑定いただけます</span><br><br><a href="<?php echo esc_url( home_url('/') ); ?>" class="logo-link"><span style="font-size: 1.4rem;">霊感タロット鑑定＆西洋占星術カウンセラー</span><span style="font-size: 3.2rem;s">&nbsp;&nbsp;陽&nbsp;純</span></a></h1>
+                    <h1 class="divination-header-logo"><span style="font-size: 2.7rem; color: rgb(163,225,280);">お気軽にメール鑑定承ります</span><br><br><a href="<?php echo esc_url( home_url('/') ); ?>" class="logo-link"><span style="font-size: 1.4rem;">霊感タロット占い師</span><span style="font-size: 3.2rem;s">&nbsp;&nbsp;陽&nbsp;純</span></a></h1>
                     <li class="divination-time-item">
                         <div class="title">お気軽にご相談ください</div>
-                        <p class="desc">対応時間：9：00~21:00</p>
+                        <p class="desc">対応時間：24時間</p>
                     </li>
                     <li class="divination-contact-item">
                         <div class="title">お問い合わせ・ご相談はこちら</div>
@@ -27,24 +27,26 @@
                     </li>
                 </ul>
             </nav>
-            <span class="nav_toggle">
-                <i></i>
-                <i></i>
-                <i></i>
-            </span>
-            <nav class="header-show">
-                <ul class="show-list">  
-                    <li class="item"><a href="<?php echo esc_url( home_url('/book/') ); ?>">出版本はこちら</a></li>
-                    <li class="item"><a href="<?php echo esc_url( home_url('/divination/') ); ?>">占いはこちら</a></li>
-                    <li class="item"><a href="<?php echo esc_url( home_url('/blog/') ); ?>">記事一覧</a></li>
-                    <li class="item"><a href="#">お問い合わせ</a></li>
+            <button type="button" id="js-buttonHamburger" class="c-button p-hamburger" aria-controls="global-nav" aria-expanded="false">
+                <span class="p-hamburger__line">
+                    <span class="u-visuallyHidden">
+                    メニューを開閉する
+                    </span>
+                </span>
+            </button>
+            <nav class="click-nav">
+                <ul class="list">  
+                    <li class="item"><a class="link" href="<?php echo esc_url( home_url('/book/') ); ?>">出版本はこちら</a></li>
+                    <li class="item"><a class="link" href="<?php echo esc_url( home_url('/divination/') ); ?>">占いはこちら</a></li>
+                    <li class="item"><a class="link" href="<?php echo esc_url( home_url('/blog/') ); ?>">記事一覧</a></li>
+                    <li class="item"><a class="link" href="#">お問い合わせ</a></li>
                 </ul>
             </nav>
             
         </header>
         <main>
             <div class="divination-top" id="particles-js">
-                <h2 class="title">誰にも話せない悩みを解決する<br>霊感タロット鑑定＆西洋占星術カウンセラーへようこそ</h2>
+                <h2 class="title">誰にも話せないお悩みを解決します<br>霊感タロット鑑定＆西洋占星術カウンセラーへようこそ</h2>
             </div>
             <section class="divination-content-section">
                 <div class="inner">

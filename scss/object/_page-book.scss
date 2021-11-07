@@ -9,8 +9,8 @@
   }
   .mask {
     background: linear-gradient(
-      to bottom,
-      rgba(161, 0, 97, 0.5),
+      to right,
+      rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.2)
     );
     width: 100%;
@@ -74,15 +74,15 @@
       line-height: 2;
       letter-spacing: 5px;
       position: absolute;
-      top: 22vw;
+      top: 25vw;
       left: 22vw;
       color: cl(white);
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-decoration-color: cl(white);
       text-underline-offset: 5px;
-      text-shadow: 0px 0px 5px #979797, 0px 0px 20px #0c0c0c,
-        0px 0px 40px #4b4b4b, 0px 0px 60px #f0f0f0;
+      text-shadow: 0px 0px 5px #0077ff, 0px 0px 20px #add7da,
+        0px 0px 40px #b0c9ff, 0px 0px 60px #90f8ff;
       .br {
         display: none;
       }
@@ -105,14 +105,14 @@
       line-height: 2;
       letter-spacing: 5px;
       position: absolute;
-      top: 30vw;
+      top: 33vw;
       left: 22vw;
       color: cl(white);
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-decoration-color: cl(white);
       text-underline-offset: 5px;
-      text-shadow: 0px 0px 5px #000000, 0px 0px 20px #add7da,
+      text-shadow: 0px 0px 5px #ff5c5c, 0px 0px 20px #add7da,
         0px 0px 40px #b0c9ff, 0px 0px 60px #90f8ff;
       .br {
         display: none;
@@ -197,15 +197,23 @@
     max-width: 1100px;
     padding: 0 20px;
     margin: 0 auto;
-    .story-title {
-      @include ZenAntiqueSoft;
-      font-size: 3rem;
-      margin-bottom: 50px;
-      color: #594e9b;
-      font-weight: bold;
-      letter-spacing: 5px;
-      @include sp {
-        font-size: 2rem;
+    .story-title-wrapper {
+      text-align: center;
+      .title {
+        display: inline-block;
+        font-size: 4rem;
+        margin-bottom: 50px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        background: linear-gradient(
+          transparent 60%,
+          rgba(255, 198, 151, 0.7) 100%
+        );
+        color: #341e70;
+        @include ZenAntiqueSoft;
+        @include sp {
+          font-size: 2rem;
+        }
       }
     }
     .desc {
@@ -237,16 +245,24 @@
   line-height: 1.7;
   .inner {
     padding: 0 20px;
-    .recommend-title {
-      @include ZenAntiqueSoft;
-      letter-spacing: 5px;
-      font-size: 3rem;
-      margin-bottom: 50px;
-      color: #594e9b;
-      font-weight: bold;
-      font-family: serif;
-      @include sp {
-        font-size: 2rem;
+    .recommend-title-wrapper {
+      text-align: center;
+      .title {
+        display: inline-block;
+        letter-spacing: 5px;
+        font-size: 4rem;
+        margin-bottom: 50px;
+        background: linear-gradient(
+          transparent 60%,
+          rgba(255, 198, 151, 0.7) 100%
+        );
+        color: #341e70;
+        font-weight: bold;
+        font-family: serif;
+        @include ZenAntiqueSoft;
+        @include sp {
+          font-size: 2rem;
+        }
       }
     }
     .list {

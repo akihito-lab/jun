@@ -38,7 +38,7 @@
                 <h2 class="main-title wow animate__animated animate__fadeIn " data-wow-delay="4s" data-wow-duration="3s">あなたに<span class="br"><br></span><span class="nbsp" >&nbsp;&nbsp;&nbsp;</span>逢いたくて</h2>
                 <p class="name wow animate__animated animate__fadeIn" data-wow-delay="3s" data-wow-duration="3s">著・愛門純菜&nbsp;&nbsp;AIMON&nbsp;Junna</p>
                 <h2 class="sub-title-first wow animate__animated animate__fadeInUp " data-wow-delay=".3s" data-wow-duration="3s"><span style="color:#add9ff;">1人の男性</span>を、<span class="br"><br></span>こんなにも</h2>
-                <h2 class="sub-title-last  wow animate__animated animate__fadeInUp" data-wow-delay="1.6s" data-wow-duration="3s"><span style="color:#fcbff9;">愛する</span>ことが<span class="br"><br></span>できるのだろうか？</h2>
+                <h2 class="sub-title-last  wow animate__animated animate__fadeInUp" data-wow-delay="1.6s" data-wow-duration="3s"><span style="color:rgba(255, 146, 201);">愛する</span>ことが<span class="br"><br></span>できるのだろうか？</h2>
                 <p class="now-on-sale">好評発売中!</p>
                 <div class="btn-wrapper"><a href="#" class="btn" id="buy"><i class="fas fa-shopping-cart"></i>購入する</a></div>
             </div>
@@ -47,7 +47,7 @@
             <div class="mask">
                 <section class="book-story-section">
                     <div class="inner">
-                        <h2 class="story-title">STORY</h2>
+                        <h2 class="story-title-wrapper"><span class="title">STORY</span></h2>
                         <p class="desc">
                         1986年、短大を卒業した愛子は神戸市内で就職し、賢志と出逢った。<br>
                         思わせぶりな賢志の言葉を信じた純粋な愛子。<br>
@@ -61,7 +61,7 @@
                 </section>
                 <section class="book-recommend-section">
                     <div class="inner">
-                        <h2 class="recommend-title">RECOMMEND</h2>
+                        <h2 class="recommend-title-wrapper"><span class="title">REVIEW</span></h2>
                         <ul class="list">
                             <li class="item">
                                 <h3 class="title">愛子にとっては一途な恋愛。しかし賢志にとっては...</h3>
@@ -77,7 +77,7 @@
                                 <div class="desc">さくさく読めます。とても読みやすいです。恋は盲目とよく言うけれど、まさにそんな感じの内容です。一人の人をこんなにも思うことが出来る主人公は純粋で嘘偽りなくて素敵だなと思う反面、今の時代だとストーカー並みのことしてるなと思います。主人公がなぜ男性に魅力を感じてここまでの行動を起こしたか分かりませんが、本の内容からすると男性の良いところは一つも見つけられませんでした笑少しの時間でさっと読めることはおすすめです。</div>
                             </li>
                             <li class="item">
-                                <h3 class="title"> 恋は盲目</h3>
+                                <h3 class="title"> 「恋は盲目」</h3>
                                 <div class="desc">読み始めたら先が気になって、あっという間に読み終わりました。いろいろなエピソードが、とてもリアルに書かれていて良かったです！恋愛になると、なかなか正しい判断ができなくなるもんだなぁーと感じました。</div>
                             </li>
                             <li class="item">
@@ -129,21 +129,6 @@
                         <div class="isbn">ISBN：978-4-286-22646-0</div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="handling-bookstore-section">
-            <div class="inner">
-                <h2 class="title"></h2>
-                <ul class="list">
-                    <li class="item"></li>
-                    <li class="item"></li>
-                    <li class="item"></li>
-                    <li class="item"></li>
-                    <li class="item"></li>
-                    <li class="item"></li>
-                    <li class="item"></li>
-                    <li class="item"></li>
-                </ul>
             </div>
         </section>
         </main>

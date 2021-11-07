@@ -1,33 +1,47 @@
 .new-blog-section {
-  padding-top: 50px;
+  .mask {
+    padding-top: 50px;
+  }
 }
 .inner {
 }
 .new-wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  background-color: cl(white);
-  box-shadow: 0 0 0 3px #bbb, 0 0 0 10px #fff, 0 0 0 15px #bbb;
 }
 .new-title {
   padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
+  color: white;
+  font-size: 2.5rem;
 }
 .new-con {
   display: flex;
-  justify-content: center;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 30px;
+  background-color: rgba(10, 10, 33, 0.3);
   .new-tag {
     margin-right: 15px;
     color: red;
+    flex: 1;
   }
   .new-list-wrapper {
+    width: 100%;
     .new-link {
+      color: white;
       display: block;
+      padding: 10px 0;
       margin-bottom: 20px;
+      border-bottom: 1px solid #75767b;
+      &:first-of-type {
+        padding-top: 0;
+      }
       &:last-of-type {
         margin-bottom: 0;
+      }
+      &:hover {
+        text-decoration: underline;
       }
     }
     .new-list {

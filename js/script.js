@@ -3,6 +3,40 @@ jQuery(function(){
   // wowの読み込み
   new WOW().init();
 
+  // ハンバーガーボタン
+  $('#js-buttonHamburger').click(function () {
+    $('body').toggleClass('is-drawerActive');
+
+    if ($(this).attr('aria-expanded') == 'false') {
+      $(this).attr('aria-expanded', true);
+    } else {
+      $(this).attr('aria-expanded', false);
+    }
+    $('.click-nav').toggleClass('show');
+  });
+
+  /* ウィンドウサイズ768以下の処理を記述 */
+  if (window.matchMedia('(max-width: 900px)').matches) {
+    $('#js-buttonHamburger').fadeIn();
+    $('.header-nav').css('display','none');
+  } else {
+    $('#js-buttonHamburger').fadeOut();
+    $('.header-nav').css('display','block');
+  };
+
+  // headerの背景色をスクロールで変える
+  jQuery(window).on('scroll', function () {
+    if ( jQuery(this).scrollTop() > 1) {
+        jQuery('.header-wrapper').addClass('h-bg');
+        jQuery('.breadcrumbs-wrapper').addClass('h-bg');
+
+    } else {
+        jQuery('.header-wrapper').removeClass('h-bg');
+        jQuery('.breadcrumbs-wrapper').removeClass('h-bg');
+
+    }
+});
+
   // click-list特定の位置までスクロール
   $('.click-service').click(function() {
     $("html,body").animate({scrollTop:$(".service").offset().top});
@@ -36,6 +70,7 @@ jQuery(function(){
 
     // slick機能
     $('.slick01').slick({
+      arrows: false,
     autoplay: true, 
     autoplaySpeed: 3000,
     dots: true, 
@@ -51,10 +86,6 @@ jQuery(function(){
       dots: false,
     　slidesToShow: 1,
       });
-
-    $('.nav_toggle').on('click', function () {
-      $('.nav_toggle, .header-show').toggleClass('show');
-    });
 
     // アコーディオンメニュー表示数の開閉
     $(function(){
@@ -104,12 +135,64 @@ jQuery(function(){
       }
     });
   });
-    
-  // pertical//
-  particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":2,"color":"rgba(252,253,181,.4)"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.19228920296125387,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":39.459250432078804,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"bubble"},"onclick":{"enable":false,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":35,"duration":2,"opacity":.8,"speed":2},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
-
   
+// slideの動くアニメーション
+  var container;
+  var camera, scene, renderer;
+  var uniforms;
 
+  init();
+  animate();
+
+  function init() {
+      container = document.getElementById( 'container' );
+
+      camera = new THREE.Camera();
+      camera.position.z = 1;
+
+      scene = new THREE.Scene();
+
+      var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
+
+      uniforms = {
+          time: { type: "f", value: 1.0 },
+          resolution: { type: "v2", value: new THREE.Vector2() }
+      };
+
+      var material = new THREE.ShaderMaterial( {
+          uniforms: uniforms,
+          vertexShader: document.getElementById( 'vertexShader' ).textContent,
+          fragmentShader: document.getElementById( 'fragmentShader' ).textContent
+      } );
+
+      var mesh = new THREE.Mesh( geometry, material );
+      scene.add( mesh );
+
+      renderer = new THREE.WebGLRenderer();
+      renderer.setPixelRatio( window.devicePixelRatio );
+
+      container.appendChild( renderer.domElement );
+
+      onWindowResize();
+      window.addEventListener( 'resize', onWindowResize, false );
+
+  }
+
+  function onWindowResize( event ) {
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      uniforms.resolution.value.x = renderer.domElement.width;
+      uniforms.resolution.value.y = renderer.domElement.height;
+  }
+
+  function animate() {
+      requestAnimationFrame( animate );
+      render();
+  }
+
+  function render() {
+      uniforms.time.value += 0.05;
+      renderer.render( scene, camera );
+  }
 
 
 

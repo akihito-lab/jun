@@ -25,14 +25,13 @@ html {
 body {
   font-family: "Noto Serif JP", "Zen Antique Soft", serif;
   font-size: 1.6rem;
-  line-height: 1;
-  // background-color: pink;
+  line-height: 1.5;
 }
 a {
   text-decoration: none;
   color: cl(black);
   &:hover {
-    opacity: 0.5;
+    // opacity: 0.8;
   }
 }
 img {

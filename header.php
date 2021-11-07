@@ -14,45 +14,51 @@
 
 <body>
     <header class="header">
+        <div class="header-wrapper">
+            <div class="header-con">
 
-        <?php if(!is_page()) : ?>
-        <h1 class="header-logo"><a href="<?php echo esc_url( home_url('/') ); ?>" class="header-logo-link">占い小説家</a></h1>
-        <?php endif; ?>
+                <?php if(!is_page()) : ?>
+                <h1 class="header-logo-wrapper"><span class="header-logo"><a href="<?php echo esc_url( home_url('/') ); ?>" class="header-logo-link">占い小説家</a></span></h1>
+                <?php endif; ?>
 
-        <span class="nav_toggle">
-            <i></i>
-            <i></i>
-            <i></i>
-        </span>
+                <button type="button" id="js-buttonHamburger" class="c-button p-hamburger" aria-controls="global-nav" aria-expanded="false">
+                    <span class="p-hamburger__line">
+                        <span class="u-visuallyHidden">
+                        メニューを開閉する
+                        </span>
+                    </span>
+                </button>
 
-        <?php if(!is_page()) : ?>
-        <nav class="header-nav">
-            <ul class="nav-list">
-                <li class="item"><a href="<?php echo esc_url( home_url('/book/') ); ?>">出版本はこちら</a></li>
-                <li class="item"><a href="<?php echo esc_url( home_url('/divination/') ); ?>">占いはこちら</a></li>
-                <li class="item"><a href="<?php echo esc_url( home_url('/blog/') ); ?>">記事一覧</a></li>
-                <li class="item"><a href="#">お問い合わせ</a></li>
-            </ul>
-        </nav>
-        <?php endif; ?>
+                <nav class="header-nav">
+                    <ul class="nav-list">
+                        <li class="item"><a class="link" href="<?php echo esc_url( home_url() ); ?>">トップページ</a></li>
+                        <li class="item"><a class="link" href="<?php echo esc_url( home_url('/book/') ); ?>">出版本はこちら</a></li>
+                        <li class="item"><a class="link" href="<?php echo esc_url( home_url('/divination/') ); ?>">占いはこちら</a></li>
+                        <li class="item"><a class="link" href="<?php echo esc_url( home_url('/blog/') ); ?>">記事一覧</a></li>
+                        <li class="item"><a class="link" href="#">お問い合わせ</a></li>
+                    </ul>
+                </nav>
 
-        <nav class="header-show">
-            <ul class="show-list">
-                <li class="item"><a href="<?php echo esc_url( home_url('/book/') ); ?>">出版本はこちら</a></li>
-                <li class="item"><a href="<?php echo esc_url( home_url('/divination/') ); ?>">占いはこちら</a></li>
-                <li class="item"><a href="<?php echo esc_url( home_url('/blog/') ); ?>">記事一覧</a></li>
-                <li class="item"><a href="#">お問い合わせ</a></li>
-            </ul>
-        </nav>
-
-        <?php if(!is_page()) : ?>
-        <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if(function_exists('bcn_display'))
-        {
-            bcn_display();
-        }?>
+                <nav class="click-nav">
+                    <ul class="list">
+                        <li class="item"><a  class="link" href="<?php echo esc_url( home_url('/book/') ); ?>">出版本はこちら</a></li>
+                        <li class="item"><a  class="link" href="<?php echo esc_url( home_url('/divination/') ); ?>">占いはこちら</a></li>
+                        <li class="item"><a  class="link" href="<?php echo esc_url( home_url('/blog/') ); ?>">記事一覧</a></li>
+                        <li class="item"><a  class="link" href="#">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <?php endif ?>
+
+        <div class="breadcrumbs-wrapper">
+            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+            <?php if(function_exists('bcn_display'))
+            {
+                bcn_display();
+            }?>
+            </div>
+        </div>
+        
     </header>
 
     
