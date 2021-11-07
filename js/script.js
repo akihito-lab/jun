@@ -16,12 +16,13 @@ jQuery(function(){
   });
 
   /* ウィンドウサイズ768以下の処理を記述 */
-  if (window.matchMedia('(max-width: 900px)').matches) {
+  if (window.matchMedia('(max-width: 769px)').matches) {
     $('#js-buttonHamburger').fadeIn();
-    $('.header-nav').css('display','none');
+    $('.header-nav').addClass('res');
   } else {
     $('#js-buttonHamburger').fadeOut();
-    $('.header-nav').css('display','block');
+    $('.header-nav').removeClass('res');
+
   };
 
   // headerの背景色をスクロールで変える

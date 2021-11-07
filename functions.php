@@ -89,10 +89,27 @@ function max_excerpt_length( $string, $maxLength ) {
     return  str_replace('\n', '', strip_tags($string));
   } else {
   // str_replace(改行コードを削除)strip_tags(htmlタグを外す)
-	$content= str_replace('\n', '', mb_substr(strip_tags($string), 0, 150,'UTF-8'));
+	$content= str_replace('\n', '', mb_substr(strip_tags($string), 0, $maxLength,'UTF-8'));
 	echo $content.'……';
   };
 }
+/*文字数の設定
+------------------------------------------------------*/
+function max_title_length( $string, $maxLength) {
+  // 文字数を取得
+  // mb_strlen(文字数を取得したい文, 'UTF-8');
+  $length = mb_strlen($string, 'UTF-8');
+  if($length < $maxLength){
+    return $string;
+  } else {
+    // 特定の文字を出力する
+    // mb_substr( 文字を取得したい文 , 何文字目から開始するか初期は０ , 表示する文字数, 'utf-8' );
+    $string = mb_substr( $string , 0 , $maxLength, 'utf-8' );
+    return $string.'...';
+  }
+}
+
+
 
 
 
@@ -185,5 +202,13 @@ function custom_search($search, $wp_query) {
    return $search;
    }
    add_filter('posts_search','custom_search', 10, 2);
+
+  //  検索で固定ページは省く
+   function my_pre_get_posts($query) {
+    if ( !is_admin() && $query->is_main_query() && $query->is_search() ) {
+      $query->set( 'post_type', array('post','blog') );
+    }
+  }
+  add_action( 'pre_get_posts','my_pre_get_posts' );
 
    

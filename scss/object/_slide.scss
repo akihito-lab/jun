@@ -48,22 +48,21 @@
     .desc {
     }
   }
-}
-
-// スライドアニメーション
-.slick-slide .item {
-  transform: scale(0.9);
-}
-
-.slick-active .item {
-  animation: ScaleAni 0.5s ease 0.5s 1 normal both;
-}
-@keyframes ScaleAni {
-  0% {
+  // スライドアニメーション
+  .slick-slide .item {
     transform: scale(0.9);
   }
-  100% {
-    transform: scale(1);
+
+  .slick-active .item {
+    animation: ScaleAni 0.5s ease 0.5s 1 normal both;
+  }
+  @keyframes ScaleAni {
+    0% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 }
 //

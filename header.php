@@ -14,12 +14,16 @@
 
 <body>
     <header class="header">
-        <div class="header-wrapper">
-            <div class="header-con">
 
-                <?php if(!is_page()) : ?>
+        <?php if(is_front_page()) : ?>
+        <div class="header-wrapper">
+        <?php endif; ?>
+
+        <?php if(!is_front_page()&&!is_page()) : ?>
+        <div class="header-archive-single-wrapper">
+        <?php endif; ?>
+            <div class="header-con">
                 <h1 class="header-logo-wrapper"><span class="header-logo"><a href="<?php echo esc_url( home_url('/') ); ?>" class="header-logo-link">占い小説家</a></span></h1>
-                <?php endif; ?>
 
                 <button type="button" id="js-buttonHamburger" class="c-button p-hamburger" aria-controls="global-nav" aria-expanded="false">
                     <span class="p-hamburger__line">
@@ -48,16 +52,31 @@
                     </ul>
                 </nav>
             </div>
+        <?php if(!is_front_page()&&!is_page()) : ?>
         </div>
+        <?php endif; ?>
+        <?php if(is_front_page()) : ?>
+        </div>
+        <?php endif; ?>
 
+        <?php if(is_front_page()) : ?>
         <div class="breadcrumbs-wrapper">
+        <?php endif; ?>
+        <?php if(!is_front_page()&&!is_page()) : ?>
+        <div class="breadcrumbs-archive-single-wrapper">
+        <?php endif; ?>
             <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <?php if(function_exists('bcn_display'))
             {
                 bcn_display();
             }?>
             </div>
+        <?php if(!is_front_page()&&!is_page()) : ?>
         </div>
+        <?php endif; ?>
+        <?php if(is_front_page()) : ?>
+        </div>
+        <?php endif; ?>
         
     </header>
 
