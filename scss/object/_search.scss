@@ -2,10 +2,21 @@
   max-width: 1200px;
   margin: 0 auto 20px;
   padding: 0 20px;
+  @include tab {
+    text-align: center;
+  }
 }
 .no-search {
   width: 70%;
   margin-right: 100px;
+  @include tab {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+  }
   .desc {
+    @include tab {
+      margin-bottom: 50px;
+    }
   }
 }

@@ -3,8 +3,8 @@
     <section class="archive-section cmn-section">
         <div class="inner">
             <div class="archive-wrapper">
-                <?php if ( have_posts() ) : ?>
                 <ul class="archive-list">
+                    <?php if ( have_posts() ) : ?>
                     <?php while ( have_posts() ) : the_post(); ?>
                     <li class="item">
                             <a href="<?php the_permalink(); ?>" class="img-wrapper-link ofh">
@@ -18,7 +18,8 @@
                                     endforeach;
                                     ?>
                                 <div class="img-wrapper">
-                                    <img src="<?php echo $thumbnail ?>" alt="" class="img">
+                                <?php $thumbnail = (get_the_post_thumbnail_url( $post->ID, 'medium' )) ? get_the_post_thumbnail_url( $post->ID, 'medium' ) : get_template_directory_uri().'/image/noimg.png'; ?>
+                                    <img src="<?php echo $thumbnail ?>" alt="アイキャッチ画像" class="img">
                                 </div>
                             </a>
                         <div class="text">
@@ -30,8 +31,10 @@
                     </li>
                     <?php endwhile;?>
                     <?php wp_pagenavi(); ?>
+                    <?php else: ?>
+                        <p class="none-post">ただいま記事を作成しております。</p>
+                    <?php endif; ?>
                 </ul>
-                <?php endif; ?>
                 <?php get_sidebar(); ?>
             </div>
         </div>

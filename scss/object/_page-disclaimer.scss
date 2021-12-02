@@ -1,0 +1,72 @@
+.disclaimer-section {
+  background-image: url(../image/archive3.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .inner {
+    padding-top: 200px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.8)
+    );
+  }
+  .disclaimer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 90px;
+    display: flex;
+    @include tab {
+      display: block;
+    }
+    .text-wrapper {
+      width: 70%;
+      margin-right: 40px;
+      @include tab {
+        margin: 0 auto 0px;
+        max-width: 800px;
+        width: 100%;
+      }
+      @include sp {
+        max-width: 340px;
+      }
+      .m-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .ofh {
+        overflow: hidden;
+        .img-wrapper {
+          transition: 0.3s;
+          &:hover {
+            transform: scale(1.2);
+          }
+          .img {
+          }
+        }
+      }
+      .text {
+        margin-top: 30px;
+        &:last-of-type {
+          margin-bottom: 50px;
+        }
+        .s-title {
+          font-weight: bold;
+          font-size: 2.5rem;
+          padding: 10px 0 10px 20px;
+          border-left: 10px solid #f98075;
+        }
+        .desc {
+          line-height: 1.8;
+          margin-top: 20px;
+          .ss-title {
+            font-weight: bold;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

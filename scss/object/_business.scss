@@ -26,7 +26,7 @@
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0)
     );
     z-index: 1;
@@ -39,6 +39,9 @@
   color: white;
   position: relative;
   z-index: 2;
+  @include tab {
+    font-size: 2.2rem;
+  }
 }
 
 .book-wrapper {
@@ -47,32 +50,77 @@
   max-width: 800px;
   padding: 0 20px;
   margin: 0 auto;
-  .book-con {
-    display: flex;
+  @include tab {
+    max-width: 440px;
+  }
+  .book-con-link {
+    display: block;
     padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 1.5px 2.4px rgb(88, 88, 88);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1.5px 2.4px rgb(255, 255, 255);
     transition-duration: 0.4s;
     &:hover {
       transition: 0.2s ease-in-out;
-      -webkit-transform: translateY(-2px);
-      -ms-transform: translateY(-2px);
       transform: translateY(-5px);
-      box-shadow: 8px 8px 18px 2px rgb(88, 88, 88);
+      box-shadow: 8px 8px 18px 2px rgb(249, 255, 228);
+    }
+  }
+
+  .book-con {
+    display: flex;
+    @include tab {
+      display: block;
     }
     .img-wrapper {
-      max-width: 300px;
+      max-width: 200px;
+      @include tab {
+        margin: 0 auto 15px;
+      }
       .img {
       }
     }
     .text {
       padding-left: 15px;
       flex: 1;
-      .title {
-        font-size: 2rem;
+      @include tab {
+        padding-left: 0;
+      }
+      .lead {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        @include tab {
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+      .info {
+        margin: 0 0 10px;
+        padding: 0 0 0 25px;
+        @include tab {
+          text-align: center;
+          padding: 0;
+        }
+        .title {
+          font-size: 2.5rem;
+          @include tab {
+            font-size: 2rem;
+          }
+        }
+        .author {
+          font-size: 1.6rem;
+          margin-bottom: 20px;
+        }
       }
       .desc {
-        margin-top: 20px;
+        line-height: 1.75;
+        border-top: 2px solid #000;
+        padding-top: 10px;
+        padding-left: 25px;
+        margin-bottom: 30px;
+        @include tab {
+          text-align: center;
+          padding-left: 0;
+        }
       }
     }
   }
@@ -82,27 +130,38 @@
   max-width: 800px;
   padding: 0 20px;
   margin: 30px auto 0;
-  .divination-con {
-    display: flex;
+  @include tab {
+    max-width: 440px;
+  }
+  .divition-con-link {
+    display: block;
     padding: 15px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 1.5px 2.4px rgb(88, 88, 88);
+    box-shadow: 0 1.5px 2.4px rgb(255, 255, 255);
     transition-duration: 0.4s;
     &:hover {
       transition: 0.2s ease-in-out;
-      -webkit-transform: translateY(-2px);
-      -ms-transform: translateY(-2px);
       transform: translateY(-5px);
-      box-shadow: 8px 8px 18px 2px rgb(88, 88, 88);
+      box-shadow: 8px 8px 18px 2px rgb(249, 255, 228);
+    }
+  }
+  .divination-con {
+    display: flex;
+    @include tab {
+      display: block;
     }
     .img-wrapper {
-      max-width: 300px;
+      max-width: 200px;
+      @include tab {
+        margin: 0 auto 15px;
+      }
       .img {
       }
     }
     .text {
       flex: 1;
       padding-left: 15px;
+      margin-bottom: 25px;
       .title {
         font-size: 2rem;
       }

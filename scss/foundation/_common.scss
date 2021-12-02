@@ -22,9 +22,65 @@
       rgb(1, 1, 1),
       rgba(1, 1, 1, 0.8),
       rgba(1, 1, 1, 0.6),
-      rgba(58, 76, 111, 0.6),
-      rgba(58, 76, 111, 0.4),
-      rgba(58, 76, 111, 0)
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0)
     );
+  }
+}
+
+// headerの共通部分
+// click-nav
+.click-nav {
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-width: 400px;
+  width: 100%;
+  background-color: rgba(26, 18, 71, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100vw);
+  transition: transform 0.8s;
+  .list {
+    .item {
+      margin-bottom: 50px;
+      transition: transform 0.3s;
+      &:hover {
+        transform: translateX(10px);
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      .link {
+        color: white;
+      }
+    }
+  }
+}
+// click-nav+show
+.click-nav.show {
+  transform: translateX(0);
+}
+
+//パンくず(固定ページ以外)
+.breadcrumbs-wrapper {
+  &.h-bg {
+    background-color: #273346;
+  }
+}
+.breadcrumbs-archive-single-wrapper {
+  background-color: #273346;
+}
+.breadcrumbs {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: cl(white);
+  span {
+    color: white;
   }
 }

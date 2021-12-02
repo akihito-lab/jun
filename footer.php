@@ -1,12 +1,16 @@
+<?php if(!is_page(array('book', 'divination', 'divination_contact','divination_complete'))) : ?>
     <footer class="footer">
-        <div class="footer-wrapper">
-            <div class="footer-link-wrapper"><a href="" class="footer-link">-トップページ</a></div>
-            <div class="footer-link-wrapper"><a href="" class="footer-link">-出版本</a></div>
-            <div class="footer-link-wrapper"><a href="" class="footer-link">-占い</a></div>
-            <div class="footer-link-wrapper"><a href="" class="footer-link">-記事一覧</a></div>
-            <div class="footer-link-wrapper"><a href="" class="footer-link">-お問い合わせ</a></div>
-        </div>
+      <ul class="list">
+        <li class="item"><a href="<?php echo esc_url( home_url() ); ?>" class="link">トップページ</a></li>
+        <li class="item"><a href="<?php echo esc_url( home_url('/book/') ); ?>" class="link">出版本</a></li>
+        <li class="item"><a href="<?php echo esc_url( home_url('/divination/') ); ?>" class="link">占い</a></li>
+        <li class="item"><a href="<?php echo esc_url( home_url('/blog/') ); ?>" class="link">記事一覧</a></li>
+        <li class="item"><a href="<?php echo esc_url( home_url('/homepage_contact/') ); ?>" class="link">お問い合わせ</a></li>
+        <li class="item"><a href="<?php echo esc_url( home_url('/privacy/') ); ?>" class="link">プライバシーポリシー</a></li>
+        <li class="item"><a href="<?php echo esc_url( home_url('/disclaimer/') ); ?>" class="link">免責事項</a></li>
+      </ul>
         <p class="copy-right">Copyright (c) 2021 Jun Home Page All Rights Reserved.</p>
+        <div id="page-top"><a href="#"><i class="fas fa-arrow-up"></i></a></div>
     </footer>
 
     <!-- fvのアニメーション -->
@@ -63,7 +67,29 @@
         gl_FragColor = vec4(finalColor,1);
       }
       </script>
-      
     <?php wp_footer(); ?>
 </body>
 </html>
+
+
+<?php elseif(is_page(array('divination', 'divination_contact','divination_complete'))) : ?>
+<div class="divination-footer">
+            <div class="btn-wrapper"><a href="<?php echo esc_url( home_url('/divination_contact/') ); ?>" class="btn">メール鑑定のお問い合わせ・ご相談はこちら</a></div>
+</div>
+  <footer class="divination-footer-btm">
+              <p class="desc">本ページに掲載の文章を無断で複製することは法律上禁じられています。</p>
+              <p class="divination-copy-right">Copyright (c) 2021 Jun Home Page All Rights Reserved.</p>
+  </footer>
+  <?php wp_footer(); ?>
+      </body>
+  </html>
+
+<?php elseif(is_page('book')) : ?>
+<footer class="book-footer">
+            <p class="desc">本ホームページに掲載の文章・画像・写真などを無断で複製することは法律上禁じられています。</p>
+            <p class="book-copy-right">Copyright (c) 2021 Jun Home Page All Rights Reserved.</p>
+</footer>
+<?php wp_footer(); ?>
+    </body>
+</html>
+  <?php endif; ?>

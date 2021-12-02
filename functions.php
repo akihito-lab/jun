@@ -1,21 +1,51 @@
 <?php 
-// サイトタイトル
-function insert_title(){
-    add_theme_support('title-tag');
-}
-add_action('after_setup_theme', 'insert_title');
-// サイト名-ページ名を、サイト名|ページ名にする
-function change_title_separator($sep){
-    $sep = '|';
-    return $sep;
-}
-add_filter('document_title_separator', 'change_title_separator');
+// w3cのjsとcssのエラーを修正
+add_action('template_redirect', function()
+{
+    ob_start(function($buffer){
+        $scriptTags = [
+            '<script type="text/javascript"',
+            '<script type=\'text/javascript\'',
+        ];
+ 
+        $styleTags = [
+            '<style type="text/css"',
+            '<style type=\'text/css\'',
+        ];
+ 
+        $buffer = str_replace($scriptTags, '<script', $buffer);
+        $buffer = str_replace($styleTags, '<style', $buffer);
+ 
+        return $buffer;
+    });
+});
+ 
+add_filter('style_loader_tag', function($tag)
+{
+    $tags = [
+        ' type="text/css"',
+        ' type=\'text/css\'',
+    ];
+    $tag = str_replace($tags, '', $tag);
+ 
+    return $tag;
+});
+ 
+add_filter('script_loader_tag', function($tag)
+{
+    $tags = [
+        ' type="text/javascript"',
+        ' type=\'text/javascript\'',
+    ];
+    $tag = str_replace($tags, '', $tag);
+ 
+    return $tag;
+});
 
 
 
 
 
-// 他のファイルでもnoimgを使えるようにglobalにしている(functions.phpで使う)
 add_theme_support('post-thumbnails');
 
 //画像を表示したいファイルに入力する
@@ -49,8 +79,6 @@ function add_css_js() {
   wp_enqueue_script('wow', get_theme_file_uri('/js/wow.min.js'), array(), false, true);
   //js/script.jsを読み込み
 	wp_enqueue_script('particles', get_theme_file_uri('/js/particles-divination.js'), array(), '', true);
-  //js/script.jsを読み込み
-	wp_enqueue_script('particles-homepage', get_theme_file_uri('/js/particles-homepage.js'), array(), '', true);
 	//js/script.jsを読み込み
 	wp_enqueue_script('js', get_theme_file_uri('/js/script.js'), array(), '', true);
 }
@@ -211,4 +239,18 @@ function custom_search($search, $wp_query) {
   }
   add_action( 'pre_get_posts','my_pre_get_posts' );
 
-   
+    // 送信完了フォームへ移動
+add_action( 'wp_footer', 'add_origin_thanks_page' );
+function add_origin_thanks_page() {
+    echo <<< EOC
+<script>
+var thanksPage = {
+  153: 'http://kisida-junko.local/homepage_complete',
+  156: 'http://kisida-junko.local/divination_complete',
+};
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    location = thanksPage[event.detail.contactFormId];
+}, false );
+</script>
+EOC;
+} 

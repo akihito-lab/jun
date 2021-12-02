@@ -1,0 +1,17 @@
+.divination_complete-section {
+  .inner {
+    .title {
+      padding: 35px;
+      text-align: center;
+      background-color: #ffedf5;
+      font-size: 3.2rem;
+      @include tab {
+        font-size: 2.2rem;
+      }
+    }
+    .desc {
+      text-align: center;
+      padding: 90px 0 200px;
+    }
+  }
+}

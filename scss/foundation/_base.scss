@@ -1,7 +1,6 @@
 // COLORS
 // @inlcude cl(black);
 //--------------------------------------------------
-
 $colors: (
   white: #fff,
   black: #000,
@@ -23,16 +22,16 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Noto Serif JP", "Zen Antique Soft", serif;
+  font-family: "Noto Serif JP", "Zen Antique Soft", "ヒラギノ明朝 Pro W3",
+    "Hiragino Mincho Pro", "游明朝", "Yu Mincho", "游明朝体", "YuMincho",
+    "ＭＳ Ｐ明朝", "MS PMincho", serif;
   font-size: 1.6rem;
   line-height: 1.5;
+  box-sizing: content-box;
 }
 a {
   text-decoration: none;
   color: cl(black);
-  &:hover {
-    // opacity: 0.8;
-  }
 }
 img {
   width: 100%;
@@ -45,11 +44,16 @@ img {
 // @inlcude TimesNewRoman;
 //--------------------------------------------------
 
-@mixin NotoSerifJP {
-  font-family: "Noto Serif JP", "Zen Antique Soft", serif;
+@mixin fontFamilySerif() {
+  font-family: "Noto Serif JP", "Zen Antique Soft", "ヒラギノ明朝 Pro W3",
+    "Hiragino Mincho Pro", "游明朝", "Yu Mincho", "游明朝体", "YuMincho",
+    "ＭＳ Ｐ明朝", "MS PMincho", serif;
 }
-@mixin ZenAntiqueSoft {
-  font-family: "Zen Antique Soft", "Noto Serif JP", serif;
+
+@mixin fontFamilySansSerif() {
+  font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial",
+    "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo",
+    "游ゴシック", "Yu Gothic", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 // RESPONSIVE
@@ -57,7 +61,17 @@ img {
 //--------------------------------------------------
 
 @mixin sp {
-  @media print, screen and (max-width: 768px) {
+  @media print, screen and (max-width: 559px) {
+    @content;
+  }
+}
+@mixin tab {
+  @media print, screen and (max-width: 959px) {
+    @content;
+  }
+}
+@mixin spc {
+  @media print, screen and (max-width: 1279px) {
     @content;
   }
 }

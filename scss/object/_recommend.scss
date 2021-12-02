@@ -13,7 +13,7 @@
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0)
     );
     z-index: 1;
@@ -25,6 +25,9 @@
     margin-bottom: 15px;
     font-size: 3rem;
     color: white;
+    @include tab {
+      font-size: 2.2rem;
+    }
   }
   .recommend-list {
     position: relative;
@@ -34,27 +37,40 @@
     max-width: 1100px;
     padding: 0 20px;
     margin: 30px auto 0;
-    a {
+    @include tab {
+      display: block;
+    }
+    .item {
       background-color: #fff;
       box-shadow: 0 1.5px 2.4px rgb(88, 88, 88);
       transition-duration: 0.4s;
-      display: block;
       width: 30%;
       &:hover {
         transition: 0.2s ease-in-out;
-        -webkit-transform: translateY(-2px);
-        -ms-transform: translateY(-2px);
         transform: translateY(-5px);
         box-shadow: 8px 8px 18px 2px rgb(88, 88, 88);
       }
+      @include tab {
+        max-width: 350px;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
     }
-    .item {
-      position: relative;
+    .link {
       padding: 15px;
+      display: block;
+    }
+    .ofh {
+      overflow: hidden;
+      position: relative;
       .category-name {
         position: absolute;
-        top: 15px;
-        right: 15px;
+        top: 0px;
+        right: 0px;
         padding: 7.5px 10px;
         width: percentage(75 / 300);
         background-color: #ff7c7c;
@@ -63,9 +79,6 @@
         justify-content: center;
         z-index: 2;
       }
-    }
-    .ofh {
-      overflow: hidden;
     }
     .img-wrapper {
       position: relative;
@@ -105,6 +118,8 @@
       }
     }
     .desc {
+      font-size: 1.8rem;
+      font-weight: bold;
     }
   }
 }

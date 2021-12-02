@@ -15,16 +15,6 @@ jQuery(function(){
     $('.click-nav').toggleClass('show');
   });
 
-  /* ウィンドウサイズ768以下の処理を記述 */
-  if (window.matchMedia('(max-width: 769px)').matches) {
-    $('#js-buttonHamburger').fadeIn();
-    $('.header-nav').addClass('res');
-  } else {
-    $('#js-buttonHamburger').fadeOut();
-    $('.header-nav').removeClass('res');
-
-  };
-
   // headerの背景色をスクロールで変える
   jQuery(window).on('scroll', function () {
     if ( jQuery(this).scrollTop() > 1) {
@@ -37,6 +27,24 @@ jQuery(function(){
 
     }
 });
+
+// topへ戻るボタン
+  var pagetop = $('#page-top');
+  // ボタン非表示
+  pagetop.hide();
+  // 100px スクロールしたらボタン表示
+  $(window).scroll(function () {
+     if ($(this).scrollTop() > 100) {
+          pagetop.fadeIn();
+     } else {
+          pagetop.fadeOut();
+     }
+  });
+  pagetop.click(function () {
+     $('body, html').animate({ scrollTop: 0 }, 500);
+     return false;
+  });
+
 
   // click-list特定の位置までスクロール
   $('.click-service').click(function() {
@@ -71,21 +79,37 @@ jQuery(function(){
 
     // slick機能
     $('.slick01').slick({
-      arrows: false,
+    arrows: true,
     autoplay: true, 
     autoplaySpeed: 3000,
     dots: true, 
-    centerMode: true,
-  　centerPadding: '100px',
+    centerMode: false,
+  　centerPadding: '0px',
   　slidesToShow: 1,
+  responsive: [
+        {
+          breakpoint: 560,
+          settings: {
+            centerMode: false,
+  　        centerPadding: '0',
+          }
+        }
+      ]
     });
-    
+
     $('.slick02').slick({
       arrows: false,
       autoplay: true,
       autoplaySpeed: 3000,
       dots: false,
     　slidesToShow: 1,
+      });
+
+    // 記事一覧のアコーディオン表示
+      $('.cmn-sidebar-title').click(function(){
+        //クリックされた.cmn-sidebar-titleの中の.accordion_headerに隣接する.sidebar-listが開いたり閉じたりする。
+        $(this).next('.sidebar-list, .search-wrapper, .sidebar-business-list').slideToggle();
+        $(this).toggleClass("open");
       });
 
     // アコーディオンメニュー表示数の開閉
@@ -118,25 +142,44 @@ jQuery(function(){
       }
     });
 
-
     // 購入ボタンを押すとbookの書籍購入までスクロール
     $('#buy').click(function() {
       $("html,body").animate({scrollTop:$(".book-store-section").offset().top});
     });
+
     // footerをfixed(page-book.php)
   $(window).on('scroll', function (){
-    $('.divination-cosutomer-section').each(function () {
+    $('.divination-message-section').each(function () {
       var changeOffset = $(this).offset().top;
       var scrolltop = $(window).scrollTop();
       var wh = $(window).height();
-      if(scrolltop > changeOffset -  wh / 4  ){
-      $('.divination-footer').fadeIn('fixed');
+      if(scrolltop < changeOffset -  wh / 4  ){
+        $('.divination-footer').fadeOut();
       } else {
-        $('.divination-footer').fadeOut('fixed');
+        $('.divination-footer').fadeIn();
       }
     });
   });
-  
+  $(document).on("scroll", function (){
+    $('.divination-footer-btm').each(function () {
+      var footerstatic = $('.divination-footer-btm').offset().top;
+      var scrolltop = $(window).scrollTop();
+      var wh = $(window).height();
+      if(scrolltop + wh < footerstatic ){
+        $(".divination-footer").css({
+          "position":"fixed", 
+          "bottom": "0px" 
+        });
+        
+      } else {
+      $(".divination-footer").css({
+        "position":"static", 
+        "bottom": "auto" 
+      });
+      }
+    });
+  });
+
 // slideの動くアニメーション
   var container;
   var camera, scene, renderer;
